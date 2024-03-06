@@ -16,7 +16,6 @@ const getmovieinfo = async (movie) => {
     if(showLoader){
         Loader.style.visibility = 'visible';
         h2container.style.display = 'none';
-        // moviecontainer.style.display='none';
     moviecontainer.style.visibility= 'hidden';
     }
     const myAPIkey = "7c8f2ef8";
@@ -37,7 +36,6 @@ const getmovieinfo = async (movie) => {
     finally {
         if(showLoader){
         Loader.style.visibility = 'hidden';
-        // moviecontainer.style.display='block';
         moviecontainer.style.visibility= 'visible';
         }
     }
@@ -97,6 +95,7 @@ const showErrorMessage = (message)=>{
 // function to handle form submission
 const handleformsubmission=(e)=>{
     e.preventDefault();
+    inputbox.blur();
     const moivename = inputbox.value.trim();
     if(moivename !== ""){
         getmovieinfo(moivename);
