@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:"Roboto",sans-serif ;
+}
+
+body{
+    background: #f5f5f5;
+    /* overflow: hidden; */
+}
+
+nav{
+    background: #232f3e;
+    color: #fff;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px;
+
+}
+
+
+.search-container{
+    position: relative;
+}
+.search-container input,button{
+    padding: 5px 10px;
+    border: none;
+    font-size: 16px;
+
+}
+
+.search-container input{
+    border-radius: 3px 0 0 3px;
+    outline: none;
+
+}
+.search-container button{
+    border-radius: 0 3px 3px 0;
+    background-color: #f5c518;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.search-container button:hover{
+    background-color: orange;
+}
+
+.movie-container{
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0px 0px 10px #ccc;
+    border-radius: 5px;
+    width: 80%;
+    
+    
+}
+
+.movie-poster img{
+    height: 100%;
+    margin-right: 30px;
+    border-radius: 5px 0 0 5px;
+
+}
+
+.Movie-info{
+    padding-inline: 10px;
+
+}
+
+.Movie-info h2{
+    text-align: center;
+    font-size: 32px;
+    margin: 10px 0 12px 0;
+}
+
+
+.Movie-info h2+p{
+    text-align: center;
+}
+
+.Movie-info .Movie-Genre{
+    display: flex;
+    justify-content: center;
+    margin-block: 5px;
+    overflow-x: auto;
+}
+
+.Movie-info .Movie-Genre p{
+    background: #232f3e;
+    color: #fff;
+    padding: 5px 14px;
+    margin-inline: 5px;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.Movie-info p{
+    font-size: 18px;
+    margin-block: 16px;
+    line-height: 24px;
+}
+
+.movie-container.noBackground{
+    background: none;
+    box-shadow: none;
+    align-items: center;
+    height: 65vh;
+}
+
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-block: 38px;
+    position: relative;
+}
+
+
+main section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 65vh; */
+}
+
+
+
+footer{
+    text-align: center;
+    background-color:#232f3e ;
+    color: #fff;
+    padding-block: 20px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.errormsg{
+    text-align: center;
+}
+
+
+/* responsive code */
+@media screen and (max-width:950px) {
+    .movie-container{
+        flex-direction: column;
+    }
+
+    .movie-poster img{
+        width: 100%;
+        height: fit-content; 
+        margin-right: 0;
+    }
+    .Movie-info{
+        padding-inline: 30px;
+    }
+}
+
+@media screen and (max-width:630px){
+    .navbar{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .search-container{
+        margin-top: 12px;
+    }
+}
+
+/* SEARCH BAR LIST */
+.search-list{
+    position: absolute;
+    right: 0;
+    top: 100%;
+    max-height: 500px;
+    overflow-y: scroll;
+    z-index: 10;
+}
+.search-list:nth-child(2) {
+    top: 300%; /* Adjust as needed */
+}
+
+
+.search-list .search-list-item{
+    background-color:#f5c518;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--dark-color);
+    width: calc(350px - 8px);
+    color: black;
+    cursor: pointer;
+    -webkit-transition: background-color 200ms ease;
+    -o-transition: background-color 200ms ease;
+    transition: background-color 200ms ease;
+}
+.search-list .search-list-item:Hover{
+    background-color: #232f3e;
+    color: #fff;
+}
+.search-list-item{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.search-item-thumbnail img{
+    width: 30px;
+    margin-right: 1rem;
+}
+.search-item-info h3{
+    font-weight: 600;
+    font-size: 1rem;
+}
+.search-item-info p{
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+/* thumbnail */
+.search-list::-webkit-scrollbar{
+    width: 8px;
+}
+.search-list::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.search-list::-webkit-scrollbar-thumb{
+    background-color: var(--yellow-color);
+    outline: none;
+    border-radius: 10px;
+}
+
+.loading{
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid #f3f3f3;
+    border-top: 6px solid #232f3e;
+    border-radius: 100%;
+    margin: auto;
+    visibility: hidden;
+    animation: spin 1s infinite linear;
+    position: absolute;
+    top: 200px;
+    right: 50%;
+    
+}
+
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
