@@ -1,5 +1,4 @@
 
-
 const Searchform =     document.querySelector('form');
 const moviecontainer = document.querySelector('.movie-container');
 const inputbox =    document.querySelector('.input-box');
@@ -44,23 +43,8 @@ const getmovieinfo = async (movie) => {
     }
 }
 
-// function findmovies(){
-//         let SearchTerm = (inputbox.value.trim());
-//         console.log(SearchTerm);
-//     }
-
-     
-
 // function to show movie data on screen
 const ShowMovieData = (data) => {
-
-    // if(SearchTerm.length > 0){
-        //     SearchList.classList.remove('hide-search-list');
-        //     getmovieinfo(SearchTerm);
-        // }else{
-        //     SearchList.classList.add('hide-search-list');
-        // }
-
         
     moviecontainer.innerHTML= '';
     moviecontainer.classList.remove('noBackground');
