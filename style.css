@@ -262,9 +262,7 @@ footer{
     margin: auto;
     gap: 20px;
     width: 80%;
-    /* border: 2px solid black; */
     margin-top: 50px;
-    /* padding: 50px 0px 50px 0px ; */
     display: none;
   }
 
@@ -284,7 +282,6 @@ footer{
     animation: loading 1.5s ease-in-out infinite;
   }
 
-  /* Animation for the loading effect */
   @keyframes loading {
     0% {
       background-position: 200% 0;
