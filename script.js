@@ -5,6 +5,7 @@ const inputbox =    document.querySelector('.input-box');
 const Loader = document.querySelector('.loading');
 const h2container = document.querySelector('#h2id');
 const SearchList = document.querySelector('.search-list');
+const skeletonloader = document.querySelector('.skeleton-container');
 
 // Titles:https://www.omdbapi.com/?s=sultan&page=1&apikey=7c8f2ef8
 
@@ -14,7 +15,7 @@ let showLoader = true;
 const getmovieinfo = async (movie) => {
  try {
     if(showLoader){
-        Loader.style.visibility = 'visible';
+        skeletonloader.style.display = 'flex';
         h2container.style.display = 'none';
     moviecontainer.style.visibility= 'hidden';
     }
@@ -35,7 +36,7 @@ const getmovieinfo = async (movie) => {
     }
     finally {
         if(showLoader){
-        Loader.style.visibility = 'hidden';
+        skeletonloader.style.display = 'none';
         moviecontainer.style.visibility= 'visible';
         }
     }
