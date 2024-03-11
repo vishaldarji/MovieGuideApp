@@ -227,31 +227,6 @@ footer{
 }
 
 
-/* .loading{
-    width: 2rem;
-    height: 2rem;
-    border: 5px solid #f3f3f3;
-    border-top: 6px solid #232f3e;
-    border-radius: 100%;
-    margin: auto;
-    visibility: hidden;
-    animation: spin 1s infinite linear;
-    position: absolute;
-    top: 200px;
-    right: 50%;
-    
-}
-
-
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-} */
 
 .skeleton-container {
     position: relative;
